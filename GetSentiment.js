@@ -1,4 +1,3 @@
-const readline = require('readline').createInterface({input: process.stdin, output: process.stdout});
 const readlineSync = require('readline-sync');
 const fs = require('fs');
 
@@ -26,11 +25,9 @@ function train(){
     }
     return vocabFreq;
 }
-
 var vocabDictionary = train();
-// console.log(vocabDictionary);
- 
-/* Get Text Document */
+
+/* Analyze Text Document */
 var analyzeText = readlineSync.question('Text to Analyze: ');
 console.log('Analyzing {' + analyzeText + '}');
 var words = analyzeText.split(/\W/);
@@ -42,6 +39,7 @@ for(var i = 0; i < words.length; i++){
     }
 }
 
+/* Compute Score and Return Analysis */
 console.log("Score: " + score)
 console.log("Comparative Score: " + score / words.length)
 if(score / words.length > 0){

@@ -39,22 +39,34 @@ for(var i = 0; i < words.length; i++){
     }
 }
 
-/* Compute Score and Return Analysis */
-console.log("Score: " + score);
-console.log("Comparative Score: " + score / words.length);
-if(score / words.length > 0){
-    console.log('Positive Attitude');
-    console.log("Playlists to keep you feeling positive!");
-    console.log("https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC");
-    console.log("https://open.spotify.com/playlist/4FYU1aJih7ykRIUYenRt8w");
-}else if(score / words.length < 0){
-    console.log('Negative Attitude');
-    console.log('Playlists to help you feel better!');
-    console.log("https://open.spotify.com/playlist/37i9dQZF1DX3rxVfibe1L0");
-    console.log("https://open.spotify.com/playlist/37i9dQZF1DWTwnEm1IYyoj");
-    console.log("https://open.spotify.com/playlist/37i9dQZF1DX889U0CL85jj");
-}else{
-    console.log('Neutral Attitude');
-    console.log("https://open.spotify.com/playlist/37i9dQZF1DWTwnEm1IYyoj");
-    console.log("https://open.spotify.com/playlist/37i9dQZF1DX889U0CL85jj");
-}
+
+
+
+  /* Load the HTTP library */
+  var http = require("http");
+
+  /* Create an HTTP server to handle responses */
+  http.createServer(function(request, response) {
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.write("Social Genre");
+    /* Compute Score and Return Analysis */
+    response.write("Score: " + score);
+    response.write("\nComparative Score: " + score / words.length);
+    if(score / words.length > 0){
+        response.write('\nPositive Attitude\n');
+        response.write("Playlists to keep you feeling positive!\n");
+        response.write("https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC\n");
+        response.write("https://open.spotify.com/playlist/4FYU1aJih7ykRIUYenRt8w\n");
+    }else if(score / words.length < 0){
+        response.write('\nNegative Attitude\n');
+        response.write('Playlists to help you feel better!');
+        response.write("https://open.spotify.com/playlist/37i9dQZF1DX3rxVfibe1L0\n");
+        response.write("https://open.spotify.com/playlist/37i9dQZF1DWTwnEm1IYyoj\n");
+        response.write("https://open.spotify.com/playlist/37i9dQZF1DX889U0CL85jj\n");
+    }else{
+        response.write('\nNeutral Attitude\n');
+        response.write("https://open.spotify.com/playlist/37i9dQZF1DWTwnEm1IYyoj\n");
+        response.write("https://open.spotify.com/playlist/37i9dQZF1DX889U0CL85jj\n");
+    }
+    response.end();
+  }).listen(8888);

@@ -43,18 +43,18 @@ for(var i = 0; i < words.length; i++){
 console.log("Score: " + score);
 console.log("Comparative Score: " + score / words.length);
 if(score / words.length > 0){
-    console.log('Positive');
+    console.log('Positive Attitude');
     console.log("Playlists to keep you feeling positive!");
     console.log("https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC");
     console.log("https://open.spotify.com/playlist/4FYU1aJih7ykRIUYenRt8w");
-}else if(score / word.length < 0){
-    console.log('Negative');
+}else if(score / words.length < 0){
+    console.log('Negative Attitude');
     console.log('Playlists to help you feel better!');
     console.log("https://open.spotify.com/playlist/37i9dQZF1DX3rxVfibe1L0");
     console.log("https://open.spotify.com/playlist/37i9dQZF1DWTwnEm1IYyoj");
     console.log("https://open.spotify.com/playlist/37i9dQZF1DX889U0CL85jj");
 }else{
-    console.log('Neutral');
+    console.log('Neutral Attitude');
     console.log("https://open.spotify.com/playlist/37i9dQZF1DWTwnEm1IYyoj");
     console.log("https://open.spotify.com/playlist/37i9dQZF1DX889U0CL85jj");
 }
